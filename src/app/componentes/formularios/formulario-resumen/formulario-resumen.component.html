@@ -1,0 +1,47 @@
+<button (click)="regresar()" class="btn btn-primary">Regresar</button>
+
+<div class="container mt-4">
+  <div class="p-4 border rounded shadow-sm bg-white">
+    <h5 class="mb-4 fw-semibold text-primary">Resumen del Formulario</h5>
+
+    <div class="mb-4 ps-3 border-start border-4 border-primary">
+      <p class="fw-semibold mb-2 fs-6">Facultad</p>
+      <ul class="ms-4 mb-0">
+        <li class="fw-semibold">Ingeniería</li>
+      </ul>
+    </div>
+
+    <div class="mb-4 ps-3 border-start border-4 border-primary">
+      <p class="fw-semibold mb-2 fs-6">Departamento</p>
+      <ul class="ms-4 mb-0">
+        <li class="fw-semibold">Departamento Médico</li>
+      </ul>
+    </div>
+
+    <div class="mb-4 ps-3 border-start border-4 border-primary">
+      <p class="fw-semibold mb-2 fs-6">Formulario</p>
+
+      <div class="ms-4">
+        <p class="mb-1">
+          <span class=""
+            >¿Se mantiene la seguridad de almacenamiento digital?</span
+          >
+          <span class="badge bg-success ms-2">Sí</span>
+        </p>
+        <p class="mb-1">
+          <span class=""
+            >¿Crees que el tratamiento de sus datos digitales son
+            correctos?</span
+          >
+          <span class="badge bg-danger ms-2">No</span>
+        </p>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button (click)="finalizarEncuesta()" class="btn btn-success">
+
+        Finalizar Encuesta
+      </button>
+    </div>
+  </div>
+</div>

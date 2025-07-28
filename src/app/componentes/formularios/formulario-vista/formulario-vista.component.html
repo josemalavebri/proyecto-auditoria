@@ -1,0 +1,37 @@
+
+<div class="container mt-4">
+  <form id="gestionEncuesta" class="p-4 border rounded shadow-sm bg-white">
+    <!-- Facultad -->
+    <div class="mb-4 ps-3 border-start border-4 border-primary">
+      <h4 class="fw-semibold mb-2">Facultad</h4>
+      <label for="facultadSelect" class="form-label"
+        >Seleccione una Facultad</label
+      >
+      <select id="facultadSelect" class="form-select" required>
+        <option value="">-- Seleccione una facultad --</option>
+        <option value="ingenieria">Ingeniería</option>
+        <option value="medicina">Medicina</option>
+        <option value="administracion">Administración</option>
+      </select>
+    </div>
+
+    <!-- Departamento -->
+    <div class="mb-4 ps-3 border-start border-4 border-primary">
+      <h4 class="fw-semibold mb-2">Departamento</h4>
+      <label for="departamentoSelect" class="form-label"
+        >Seleccione un Departamento</label
+      >
+      <select id="departamentoSelect" class="form-select" required>
+        <option value="">-- Seleccione un departamento --</option>
+        <option value="medico">Departamento Médico</option>
+        <option value="administrativo">Departamento Administrativo</option>
+        <option value="tecnico">Departamento Técnico</option>
+      </select>
+    </div>
+    <!-- Botones -->
+    <div class="d-flex justify-content-start gap-3">
+      <button type="reset" class="btn btn-primary">Limpiar</button>
+      <button (click)="continuarPreguntas()" class="btn btn-success">Continuar</button>
+    </div>
+  </form>
+</div>

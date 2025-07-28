@@ -1,0 +1,55 @@
+<div class="container mt-4">
+  <h4 class="mb-3">Registro de Facultad y Encargado</h4>
+
+  <form>
+    <div class="mb-3">
+      <label for="nombreFacultad" class="form-label"
+        >Nombre de la Facultad</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="nombreFacultad"
+        placeholder="Ej. Facultad de Ingeniería en Sistemas"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="nombreEncargado" class="form-label"
+        >Nombre del Encargado</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="nombreEncargado"
+        placeholder="Ej. Ing. José Pérez"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="correoEncargado" class="form-label"
+        >Correo del Encargado</label
+      >
+      <input
+        type="email"
+        class="form-control"
+        id="correoEncargado"
+        placeholder="ejemplo@universidad.edu.ec"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="telefonoEncargado" class="form-label"
+        >Teléfono del Encargado</label
+      >
+      <input
+        type="tel"
+        class="form-control"
+        id="telefonoEncargado"
+        placeholder="0991234567"
+      />
+    </div>
+
+    <button (click)="registroFacultad()" class="btn btn-primary">Registrar Facultad</button>
+  </form>
+</div>
