@@ -1,34 +1,58 @@
 <div class="container mt-5">
   <form id="gestionEncuesta" class="ug-form shadow">
-    <!-- Facultad -->
+    <!-- LUGAR -->
     <div class="form-section">
       <h5 class="section-title">Lugar</h5>
-      <label for="facultadSelect" class="form-label">Seleccione un Lugar</label>
-      <select id="facultadSelect" class="form-select" required>
-        <option value="">-- Seleccione un Lugar --</option>
-        <option value="ingenieria">Lugar 1</option>
-        <option value="ingenieria">Lugar 2</option>
-      </select>
+      <label for="facultadInput" class="form-label">Busque un Lugar</label>
+      <div class="input-search-wrapper">
+        <i class="bi bi-search search-icon"></i>
+        <input
+          type="text"
+          id="facultadInput"
+          class="form-select input-with-icon"
+          list="lugares"
+          placeholder="Escriba o seleccione un lugar"
+          required
+        />
+        <datalist id="lugares">
+          <option value="Lugar 1"></option>
+          <option value="Lugar 2"></option>
+        </datalist>
+      </div>
     </div>
 
-    <!-- Departamento -->
+    <!-- DEPARTAMENTO -->
     <div class="form-section">
       <h5 class="section-title">Departamento</h5>
-      <label for="departamentoSelect" class="form-label"
-        >Seleccione un Departamento</label
+      <label for="departamentoInput" class="form-label"
+        >Busque un Departamento</label
       >
-      <select id="departamentoSelect" class="form-select" required>
-        <option value="">-- Seleccione un departamento --</option>
-        <option value="medico">Departamento Médico</option>
-        <option value="administrativo">Departamento Administrativo</option>
-        <option value="tecnico">Departamento Técnico</option>
-      </select>
+      <div class="input-search-wrapper">
+        <i class="bi bi-search search-icon"></i>
+        <input
+          type="text"
+          id="departamentoInput"
+          class="form-select input-with-icon"
+          list="departamentos"
+          placeholder="Escriba o seleccione un departamento"
+          required
+        />
+        <datalist id="departamentos">
+          <option value="Departamento Médico"></option>
+          <option value="Departamento Administrativo"></option>
+          <option value="Departamento Técnico"></option>
+        </datalist>
+      </div>
     </div>
 
     <!-- Botones -->
     <div class="form-actions">
       <button type="reset" class="btn btn-outline-primary">Limpiar</button>
-      <button (click)="continuarPreguntas()" class="btn btn-primary">
+      <button
+        type="button"
+        (click)="continuarPreguntas()"
+        class="btn btn-primary"
+      >
         Continuar
       </button>
     </div>

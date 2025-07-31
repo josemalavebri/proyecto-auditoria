@@ -84,3 +84,21 @@ label {
   padding-left: 1rem;
   margin-bottom: 2rem;
 }
+
+.input-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-icon {
+  padding-left: 2.2rem; /* espacio para el icono */
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  color: #888;
+  font-size: 1rem;
+  pointer-events: none;
+}
