@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-gestion-preguntas',
   imports: [],
   templateUrl: './gestion-preguntas.component.html',
-  styleUrl: './gestion-preguntas.component.css'
+  styleUrl: './gestion-preguntas.component.css',
 })
-export class GestionPreguntasComponent {
-
-}
+export class GestionPreguntasComponent {}

@@ -1,55 +1,52 @@
-<div class="container mt-4">
-  <h4 class="mb-3">Registro de Facultad y Encargado</h4>
+<div class="container-fluid mt-5 ug-container shadow">
+  <h4 class="mb-4 ug-title">Registro de Facultad y Encargado</h4>
 
   <form>
-    <div class="mb-3">
-      <label for="nombreFacultad" class="form-label"
+    <div class="mb-4">
+      <label for="nombreFacultad" class="form-label ug-label"
         >Nombre de la Facultad</label
       >
       <input
         type="text"
-        class="form-control"
+        class="form-control ug-input"
         id="nombreFacultad"
         placeholder="Ej. Facultad de Ingeniería en Sistemas"
+        required
       />
     </div>
 
-    <div class="mb-3">
-      <label for="nombreEncargado" class="form-label"
+    <div class="mb-4">
+      <label for="nombreEncargado" class="form-label ug-label"
         >Nombre del Encargado</label
       >
       <input
         type="text"
-        class="form-control"
+        class="form-control ug-input"
         id="nombreEncargado"
         placeholder="Ej. Ing. José Pérez"
+        required
       />
     </div>
 
-    <div class="mb-3">
-      <label for="correoEncargado" class="form-label"
+    <div class="mb-4">
+      <label for="correoEncargado" class="form-label ug-label"
         >Correo del Encargado</label
       >
       <input
         type="email"
-        class="form-control"
+        class="form-control ug-input"
         id="correoEncargado"
         placeholder="ejemplo@universidad.edu.ec"
+        required
       />
     </div>
 
-    <div class="mb-3">
-      <label for="telefonoEncargado" class="form-label"
-        >Teléfono del Encargado</label
-      >
-      <input
-        type="tel"
-        class="form-control"
-        id="telefonoEncargado"
-        placeholder="0991234567"
-      />
-    </div>
-
-    <button (click)="registroFacultad()" class="btn btn-primary">Registrar Facultad</button>
+    <button
+      type="submit"
+      (click)="registroFacultad()"
+      class="btn ug-btn-primary"
+    >
+      Registrar Facultad
+    </button>
   </form>
 </div>

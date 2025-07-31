@@ -1,33 +1,97 @@
+<div class="container mt-4 ug-container">
+  <header class="mb-4 d-flex justify-content-between align-items-center">
+    <h4 class="ug-title">Resumen del Riesgo</h4>
+  </header>
 
-<div class="container mt-4">
-  <div class="d-flex justify-content-between align-items-center mb-4">
-    <h4>Resumen del Riesgo</h4>
-  </div>
-
-  <form class="border p-4 rounded bg-light">
-    <div class="mb-3">
-      <label class="form-label fw-bold">Área evaluada</label>
-      <div>Sistemas y Seguridad</div>
-    </div>
-
-    <div class="mb-3">
-      <label class="form-label fw-bold">Responsable</label>
-      <div>Juan Pérez</div>
-    </div>
-
-    <hr />
-
-    <div class="mb-3">
-      <label class="form-label fw-bold">Puntaje preliminar de riesgo</label>
-      <div class="text-danger">Alto</div>
-    </div>
-
-    <div class="mb-3">
-      <label class="form-label fw-bold">Observaciones</label>
-      <div>
-        Falta automatización en los respaldos. Usuarios con accesos innecesarios
-        detectados.
+  <section
+    class="ug-summary border rounded p-4 bg-white shadow-sm"
+    role="region"
+    aria-label="Resumen del Riesgo"
+  >
+    <div class="ug-item mb-4">
+      <label class="ug-label" for="afectacionObligaciones"
+        >Afectación a obligaciones</label
+      >
+      <div id="afectacionObligaciones" class="ug-content" tabindex="0">
+        Existe afectación por incumplimiento de normativas
       </div>
     </div>
-  </form>
+
+    <div class="ug-item mb-4">
+      <label class="ug-label" for="incumplimientoClausulas"
+        >Incumplimiento de cláusulas relacionadas</label
+      >
+      <div id="incumplimientoClausulas" class="ug-content" tabindex="0">
+        Protección de datos en contratos y condiciones de uso
+      </div>
+    </div>
+
+    <div class="ug-item mb-4">
+      <label class="ug-label" for="cumplimientoLopdp"
+        >Porcentaje de cumplimiento LOPDP</label
+      >
+      <div id="cumplimientoLopdp" class="ug-content" tabindex="0">76%</div>
+    </div>
+
+    <div class="ug-item mb-4">
+      <label class="ug-label" for="cumplimientoUG"
+        >Porcentaje de cumplimiento UG</label
+      >
+      <div id="cumplimientoUG" class="ug-content" tabindex="0">82%</div>
+    </div>
+
+    <div class="ug-item mb-4">
+      <label class="ug-label" for="custodioDatos">Custodio de los datos</label>
+      <div id="custodioDatos" class="ug-content" tabindex="0">
+        Departamento de Seguridad Informática
+      </div>
+    </div>
+
+    <div class="ug-item mb-4">
+      <label class="ug-label" for="encargadoTratamiento"
+        >Encargado del tratamiento</label
+      >
+      <div id="encargadoTratamiento" class="ug-content" tabindex="0">
+        Lic. María López
+      </div>
+    </div>
+
+    <div class="ug-item mb-4">
+      <label class="ug-label" for="observacionesRiesgo">Observaciones</label>
+      <div id="observacionesRiesgo" class="ug-content" tabindex="0">
+        Algunos contratos no han sido actualizados con cláusulas de protección
+        de datos.
+      </div>
+    </div>
+
+    <div class="ug-item mb-4">
+      <label class="ug-label" for="fechaInicio">Fecha de inicio</label>
+      <div id="fechaInicio" class="ug-content" tabindex="0">15/07/2025</div>
+    </div>
+
+    <div class="ug-item mb-4">
+      <label class="ug-label" for="frecuenciaRevision"
+        >Frecuencia de revisión</label
+      >
+      <div id="frecuenciaRevision" class="ug-content" tabindex="0">
+        Trimestral
+      </div>
+    </div>
+
+    <div class="ug-item mb-4">
+      <label class="ug-label" for="observacionAvance"
+        >Observación de avance</label
+      >
+      <div id="observacionAvance" class="ug-content" tabindex="0">
+        Se ha iniciado la revisión contractual. Proceso en curso.
+      </div>
+    </div>
+
+    <div class="ug-item mb-2">
+      <label class="ug-label" for="encargadoEstado">Encargado del estado</label>
+      <div id="encargadoEstado" class="ug-content" tabindex="0">
+        Ing. Andrés Martínez
+      </div>
+    </div>
+  </section>
 </div>

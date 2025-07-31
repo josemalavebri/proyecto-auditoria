@@ -1,47 +1,43 @@
-<div class="container mt-5">
-  <h4 class="mb-4">Registro de Área de la Facultad</h4>
+<div class="container mt-5 ug-container shadow">
+  <h4 class="mb-4 ug-title">Registro de Área de la Facultad</h4>
 
   <form>
-    <div class="mb-3">
-      <label for="facultad" class="form-label">Facultad</label>
+    <div class="mb-4">
+      <label for="facultad" class="form-label ug-label">Facultad</label>
       <input
         type="text"
-        class="form-control"
+        class="form-control ug-input"
         id="facultad"
         placeholder="Ej. Facultad de Ingeniería"
+        required
       />
     </div>
 
-    <div class="mb-3">
-      <label for="nombreArea" class="form-label">Nombre del Área</label>
+    <div class="mb-4">
+      <label for="nombreArea" class="form-label ug-label"
+        >Nombre del Área</label
+      >
       <input
         type="text"
-        class="form-control"
+        class="form-control ug-input"
         id="nombreArea"
         placeholder="Ej. Laboratorio de Redes"
+        required
       />
     </div>
 
-    <div class="mb-3">
-      <label for="ubicacion" class="form-label">Ubicación del Área</label>
+    <div class="mb-4">
+      <label for="ubicacion" class="form-label ug-label"
+        >Ubicación del Área</label
+      >
       <input
         type="text"
-        class="form-control"
+        class="form-control ug-input"
         id="ubicacion"
         placeholder="Ej. Edificio B, 2do piso"
       />
     </div>
 
-    <div class="mb-3">
-      <label for="descripcion" class="form-label">Descripción</label>
-      <textarea
-        class="form-control"
-        id="descripcion"
-        rows="3"
-        placeholder="Describe las funciones del área..."
-      ></textarea>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Registrar Área</button>
+    <button type="submit" class="btn ug-btn-primary">Registrar Área</button>
   </form>
 </div>

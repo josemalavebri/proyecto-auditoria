@@ -1,20 +1,51 @@
-.container {
+.ug-container {
   background: #fff;
-  padding: 20px 25px;
-  border-radius: 10px;
+  padding: 25px 30px;
+  border-radius: 12px;
   max-width: 800px;
-  margin: 0 auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin: 2rem auto;
+  box-shadow: 0 6px 18px rgba(0, 76, 151, 0.15);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #003766;
 }
 
-.grafico-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: space-between;
+.ug-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #004c97;
+  margin-bottom: 1rem;
 }
 
-.grafico {
-  flex: 1 1 300px;
-  max-width: 400px;
+.ug-label {
+  display: block;
+  font-weight: 600;
+  color: #004c97;
+  margin-bottom: 0.3rem;
 }
+
+.ug-select {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1.6px solid #cdd7e0;
+  background-color: #f9fbfd;
+  color: #003766;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none;
+  cursor: pointer;
+}
+
+.ug-select:focus {
+  border-color: #004c97;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 76, 151, 0.3);
+}
+
+/* Opcional: agregar un icono para el dropdown si quieres */
+/* .ug-select {
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%230047a0" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px 16px;
+} */

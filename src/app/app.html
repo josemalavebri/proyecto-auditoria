@@ -1,32 +1,25 @@
-<nav class="navbar bg-primary navbar-dark shadow-sm">
-  <div class="container-fluid d-flex justify-content-center">
-    <span class="navbar-brand mb-0 h1 fw-semibold">Auditoria</span>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
+  <div
+    class="container-fluid d-flex justify-content-between align-items-center"
+  >
+    <!-- Banner a la izquierda -->
+    <div class="d-flex align-items-center">
+      <img class="img-banner" src="images/banner-ug.png" alt="Banner UG" />
+    </div>
+
+    <!-- Botones a la derecha -->
+    <div class="d-flex gap-2 align-items-center">
+      <a routerLink="/formulario" class="btn ug-btn">Formulario</a>
+      <a routerLink="/areas" class="btn ug-btn">Areas</a>
+      <a routerLink="/creador-preguntas" class="btn ug-btn"
+        >Creador de Preguntas</a
+      >
+      <a routerLink="/riesgos" class="btn ug-btn">Reportes</a>
+    </div>
   </div>
 </nav>
 
-<div class="container-fluid">
-  <div class="row">
-    <!-- Menú lateral a la izquierda -->
-    <div class="col-2 bg-light border-end vh-100 pt-3">
-      <div class="d-grid gap-2">
-        <button routerLink="/formulario" class="btn btn-outline-primary">
-          Formulario
-        </button>
-        <button routerLink="/areas" class="btn btn-outline-primary">
-          Areas
-        </button>
-        <button routerLink="/creador-preguntas" class="btn btn-outline-primary">
-          Creador de Preguntas
-        </button>
-        <button routerLink="/riesgos" class="btn btn-outline-primary">
-          Reportes
-        </button>
-      </div>
-    </div>
-
-    <!-- Contenido a la derecha -->
-    <div class="col-9 pt-4">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+<!-- Contenido a la derecha -->
+<div class="container col-9 pt-4">
+  <router-outlet></router-outlet>
 </div>

@@ -13,7 +13,7 @@ export class FormularioVistaComponent {
 
   }
   continuarPreguntas() {
-    this.router.navigate(['/preguntas'])
+    this.router.navigate(['/preguntas-v2'])
   }
 
 

@@ -1,0 +1,35 @@
+.navbar {
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  border-bottom: 3px solid #004c97;
+}
+
+.img-banner {
+  height: 50px;
+  object-fit: contain;
+}
+
+.ug-btn {
+  background-color: #004c97;
+  color: #ffffff;
+  border: 1px solid #004c97;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.ug-btn:hover {
+  background-color: #ffffff;
+  color: #004c97;
+  border: 1px solid #004c97;
+}
+
+.ug-btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 76, 151, 0.4);
+}
+
+
+
+/* Título */

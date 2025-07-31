@@ -1,54 +1,194 @@
+/* Contenedor principal */
+.ug-container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 2.5rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 76, 151, 0.1);
+}
+
+/* Labels */
+.ug-label {
+  font-weight: 600;
+  color: #003766;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-size: 1rem;
+}
+
+/* Select personalizado */
+.ug-select {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 1.6px solid #ccd6e0;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23004c97' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  color: #222;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.ug-select:focus {
+  border-color: #004c97;
+  box-shadow: 0 0 8px rgba(0, 76, 151, 0.25);
+  outline: none;
+}
+
+/* Sección preguntas */
+.ug-preguntas-container {
+  background-color: #fafafa;
+}
+
+/* Títulos de sección */
+.ug-section-title {
+  color: #004c97;
+  font-weight: 700;
+}
+
+/* Subtítulos */
+.ug-subsection-title {
+  color: #003766;
+  font-weight: 700;
+  border-left: 4px solid #004c97;
+  padding-left: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Listas */
+.ug-list-group {
+  margin-bottom: 1.5rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.ug-list-item {
+  border: none;
+  padding-left: 0;
+  font-weight: 600;
+  color: #004c97;
+  background: transparent;
+}
+
+.ug-sublist {
+  font-weight: 400;
+  color: #222;
+  list-style-type: disc;
+}
+
+/* Grupo de botones al lado derecho */
+.ug-btn-group {
+  gap: 0.75rem;
+}
+
+/* Botones comunes */
 button {
   padding: 10px 18px;
-  background-color: #2980b9;
-  border: none;
-  color: white;
-  font-weight: 600;
   border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   min-width: 140px;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  width: 100%;
 }
 
-button:hover {
-  background-color: #1c5980;
+/* Botón azul primario y outline */
+.btn-primary,
+button.btn-outline-primary {
+  background-color: #004c97;
+  color: white;
+  border-color: #004c97;
 }
 
+button.btn-outline-primary {
+  background-color: transparent;
+  color: #004c97;
+  border-color: #004c97;
+}
 
-.btn-success {
-  padding: 10px 18px;
+.btn-primary:hover,
+button.btn-outline-primary:hover {
+  background-color: #003766;
+  border-color: #003766;
+  color: white;
+}
+
+/* Botón verde éxito */
+.btn-success,
+button.btn-outline-success {
   background-color: #2ac94c;
-  border: none;
   color: white;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  min-width: 140px;
+  border-color: #2ac94c;
 }
 
+button.btn-outline-success {
+  background-color: transparent;
+  color: #2ac94c;
+  border-color: #2ac94c;
+}
 
-.btn-danger {
-  padding: 10px 18px;
+.btn-success:hover,
+button.btn-outline-success:hover {
+  background-color: #238f3b;
+  border-color: #238f3b;
+  color: white;
+}
+
+/* Botón rojo peligro */
+.btn-danger,
+button.btn-outline-danger {
   background-color: #c92a2a;
-  border: none;
   color: white;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  min-width: 140px;
+  border-color: #c92a2a;
 }
 
+button.btn-outline-danger {
+  background-color: transparent;
+  color: #c92a2a;
+  border-color: #c92a2a;
+}
 
-.btn-outline-secondary{
-  padding: 10px 18px;
-  background-color: #c9be2a;
-  border: none;
+.btn-danger:hover,
+button.btn-outline-danger:hover {
+  background-color: #941f1f;
+  border-color: #941f1f;
   color: white;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  min-width: 140px;
+}
+
+/* Botón amarillo (warning) */
+.btn-warning,
+button.btn-outline-warning {
+  background-color: #c9be2a;
+  color: white;
+  border-color: #c9be2a;
+}
+
+button.btn-outline-warning {
+  background-color: transparent;
+  color: #c9be2a;
+  border-color: #c9be2a;
+}
+
+.btn-warning:hover,
+button.btn-outline-warning:hover {
+  background-color: #9f981f;
+  border-color: #9f981f;
+  color: white;
+}
+
+.ug-title {
+  font-weight: 700;
+  color: #004c97;
+  border-left: 5px solid #004c97;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
 }

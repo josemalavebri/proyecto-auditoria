@@ -7,9 +7,11 @@ import { FacultadRegistroComponent } from './componentes/facultad/facultad-regis
 import { FacultadRegistroDepartamentosComponent } from './componentes/facultad/facultad-registro-departamentos/facultad-registro-departamentos.component';
 import { PreguntasFormularioComponent } from './componentes/formularios/preguntas-formulario/preguntas-formulario.component';
 import { RiesgoGeneral } from './componentes/riesgo-graficas/riesgo-general/riesgo-general';
+import { FormularioPreguntasV2 } from './componentes/formulario-preguntas-v2/formulario-preguntas-v2';
 
 export const routes: Routes = [
   { path: 'preguntas', component: PreguntasFormularioComponent },
+  { path: 'preguntas-v2', component: FormularioPreguntasV2 },
   { path: 'resumen', component: FormularioResumenComponent },
   { path: 'formulario', component: FormularioVistaComponent },
   { path: 'reportes', component: FormularioResumenComponent },
@@ -21,6 +23,6 @@ export const routes: Routes = [
     component: FacultadRegistroDepartamentosComponent,
   },
   { path: 'creador-preguntas', component: GestionPreguntasComponent },
-  { path: 'riesgos', component: RiesgoGeneral},
+  { path: 'riesgos', component: RiesgoGeneral },
   { path: '', redirectTo: '/formulario', pathMatch: 'full' },
 ];

@@ -1,23 +1,19 @@
-
-<div class="container mt-4">
-  <form id="gestionEncuesta" class="p-4 border rounded shadow-sm bg-white">
+<div class="container mt-5">
+  <form id="gestionEncuesta" class="ug-form shadow">
     <!-- Facultad -->
-    <div class="mb-4 ps-3 border-start border-4 border-primary">
-      <h4 class="fw-semibold mb-2">Facultad</h4>
-      <label for="facultadSelect" class="form-label"
-        >Seleccione una Facultad</label
-      >
+    <div class="form-section">
+      <h5 class="section-title">Lugar</h5>
+      <label for="facultadSelect" class="form-label">Seleccione un Lugar</label>
       <select id="facultadSelect" class="form-select" required>
-        <option value="">-- Seleccione una facultad --</option>
-        <option value="ingenieria">Ingeniería</option>
-        <option value="medicina">Medicina</option>
-        <option value="administracion">Administración</option>
+        <option value="">-- Seleccione un Lugar --</option>
+        <option value="ingenieria">Lugar 1</option>
+        <option value="ingenieria">Lugar 2</option>
       </select>
     </div>
 
     <!-- Departamento -->
-    <div class="mb-4 ps-3 border-start border-4 border-primary">
-      <h4 class="fw-semibold mb-2">Departamento</h4>
+    <div class="form-section">
+      <h5 class="section-title">Departamento</h5>
       <label for="departamentoSelect" class="form-label"
         >Seleccione un Departamento</label
       >
@@ -28,10 +24,13 @@
         <option value="tecnico">Departamento Técnico</option>
       </select>
     </div>
+
     <!-- Botones -->
-    <div class="d-flex justify-content-start gap-3">
-      <button type="reset" class="btn btn-primary">Limpiar</button>
-      <button (click)="continuarPreguntas()" class="btn btn-success">Continuar</button>
+    <div class="form-actions">
+      <button type="reset" class="btn btn-outline-primary">Limpiar</button>
+      <button (click)="continuarPreguntas()" class="btn btn-primary">
+        Continuar
+      </button>
     </div>
   </form>
 </div>

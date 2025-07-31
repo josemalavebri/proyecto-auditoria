@@ -1,8 +1,10 @@
-<div class="container">
-  <h5 class="mb-3">Formulario de Evaluación</h5>
+<div class="container ug-container">
+  <h5 class="ug-title mb-3">Formulario de Evaluación</h5>
+
   <div class="mb-3">
-    <label for="facultad" class="form-label">Facultad</label>
-    <select id="facultad" class="form-select">
+    <label for="facultad" class="ug-label">Facultad</label>
+    <select id="facultad" class="ug-select">
+      <option value="" disabled selected>Seleccione una facultad</option>
       <option>Facultad de Ingeniería en Sistemas</option>
       <option>Facultad de Ciencias Médicas</option>
       <option>Facultad de Jurisprudencia</option>
@@ -12,8 +14,9 @@
   </div>
 
   <div class="mb-3">
-    <label for="departamento" class="form-label">Departamento</label>
-    <select id="departamento" class="form-select">
+    <label for="departamento" class="ug-label">Departamento</label>
+    <select id="departamento" class="ug-select">
+      <option value="" disabled selected>Seleccione un departamento</option>
       <option>Departamento de Informática</option>
       <option>Departamento de Bienestar Estudiantil</option>
       <option>Departamento Académico</option>
@@ -21,6 +24,7 @@
       <option>Departamento de Investigación</option>
     </select>
   </div>
+
   <div class="grafico-wrapper">
     <div class="grafico">
       <canvas #barCanvas></canvas>

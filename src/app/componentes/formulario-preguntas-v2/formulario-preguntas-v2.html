@@ -1,0 +1,74 @@
+<div class="container-fluid mt-5 ug-container shadow">
+  <h4 class="mb-4 ug-title">Formulario de Evaluación</h4>
+
+  <!-- Card 1 -->
+  <div class="card mb-4 shadow" [class.opacity-50]="card1Inactiva">
+    <div class="card-body">
+      <h5 class="card-title ug-label">
+        Catágolo 1: ¿El sistema cumple con los requisitos de seguridad?
+      </h5>
+      <div class="mt-3 d-flex gap-2">
+        <button
+          class="btn btn-secondary"
+          (click)="card1Inactiva = true"
+          [disabled]="card1Inactiva"
+        >
+          No aplica
+        </button>
+        <button class="btn btn-warning">Mitigar</button>
+        <button (click)="cambiarPestana()" class="btn btn-success">
+          Aceptar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card mb-4 shadow" [class.opacity-50]="card2Inactiva">
+    <div class="card-body">
+      <h5 class="card-title ug-label">
+        Catágolo 2: ¿El sistema maneja adecuadamente la información personal?
+      </h5>
+      <div class="mt-3 d-flex gap-2">
+        <button
+          class="btn btn-secondary"
+          (click)="card2Inactiva = true"
+          [disabled]="card2Inactiva"
+        >
+          No aplica
+        </button>
+        <button class="btn btn-warning">Mitigar</button>
+        <button (click)="cambiarPestana()" class="btn btn-success">
+          Aceptar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card mb-4 shadow" [class.opacity-50]="card3Inactiva">
+    <div class="card-body">
+      <h5 class="card-title ug-label">
+        Catágolo 3: ¿El sistema cumple con los tiempos de respuesta esperados?
+      </h5>
+      <div class="mt-3 d-flex gap-2">
+        <button
+          class="btn btn-secondary"
+          (click)="card3Inactiva = true"
+          [disabled]="card3Inactiva"
+        >
+          No aplica
+        </button>
+        <button class="btn btn-warning">Mitigar</button>
+        <button (click)="cambiarPestana()" class="btn btn-success">
+          Aceptar
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid d-flex justify-content-center">
+    <button (click)="finalizarFormulario()" class="btn btn-success">
+      Finalizar Formulario
+    </button>
+  </div>
+</div>
