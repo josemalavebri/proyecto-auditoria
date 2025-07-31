@@ -1,21 +1,29 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-formulario-preguntas-v2',
-  imports: [],
   templateUrl: './formulario-preguntas-v2.html',
-  styleUrl: './formulario-preguntas-v2.css',
+  styleUrls: ['./formulario-preguntas-v2.css'],
+  imports: [DatePipe],
 })
 export class FormularioPreguntasV2 {
-  card1Inactiva = false;
-  card2Inactiva = false;
-  card3Inactiva = false;
+  hoy: Date = new Date();
+
+  // Simulación de datos de progreso de la encuesta
+  seccionActual: number = 4;
+  totalSecciones: number = 8;
+
+  preguntaActual: number = 1;
+  totalPreguntas: number = 5;
 
   constructor(private router: Router) {}
+
   cambiarPestana() {
     this.router.navigate(['/preguntas']);
   }
+
   finalizarFormulario() {
     this.router.navigate(['/resumen']);
   }
