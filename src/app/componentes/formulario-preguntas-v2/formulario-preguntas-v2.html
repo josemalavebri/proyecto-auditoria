@@ -1,25 +1,37 @@
-<div class="container-fluid mt-5 ug-container shadow">
-  <div class="d-flex justify-content-between mb-3">
-    <div>
-      <label class="fw-bold">Facultad/Dirección/Departamento:</label>
-      <input type="text" class="form-control" placeholder="Ingrese la unidad" />
-    </div>
-    <div>
-      <label class="fw-bold">Fecha Hoy:</label>
-      <input type="date" class="form-control" [value]="hoy | date:'yyyy-MM-dd'" disabled />
-    </div>
-  </div>
+<div class="d-flex justify-content-center align-items-center">
+  <label class="fw-bold">
+    Dirección General de Tecnologías de la Información (DGTI)
+  </label>
+</div>
+<h1 class="ug-title">Primera Encuesta</h1>
+<div class="d-flex gap-2 align-items-center p-2">
+  <label class="fw-bold">Fecha: </label>
+  <input
+    type="date"
+    class="form-control"
+    [value]="hoy | date : 'yyyy-MM-dd'"
+    disabled
+  />
+</div>
+<!-- Nueva sección añadida -->
 
-  <button class="btn btn-outline-primary mb-3">Encuestas Anteriores</button>
+<div class="container-fluid mt-4 ug-container shadow-lg p-4">
+  <div class="ps-2 mb-4 border-start border-4 border-primary ">
+    <h5 class="fw-semibold text-primary">
+      Sección A: Controles Técnicos y Operacionales (Infraestructura y Sistemas)
+    </h5>
+  </div>
+  <div class="d-flex justify-content-between mb-3"></div>
 
   <!-- Pregunta 1 -->
-  <div class="card shadow mb-3">
+  <div class="card mb-3">
     <div class="card-body">
       <p class="fw-semibold">
-        1. ¿Se utilizan soluciones técnicas (ej: cifrado, segregación de red, hardening) para prevenir accesos no autorizados?
+        1. ¿Se utilizan soluciones técnicas (ej: cifrado, segregación de red,
+        hardening) para prevenir accesos no autorizados?
       </p>
       <div class="d-flex gap-2 mb-3">
-        <button class="btn btn-success">Sí</button>
+        <button class="btn btn-success" (click)="abrirModal()">Sí</button>
         <button class="btn btn-danger">No</button>
         <button class="btn btn-secondary">Desglosar</button>
       </div>
@@ -27,23 +39,50 @@
   </div>
 
   <!-- Pregunta 2 -->
-  <div class="card shadow mb-3">
+  <div class="card mb-3">
     <div class="card-body">
       <p class="fw-semibold">
         2. ¿Se realiza copia de seguridad periódica de la información crítica?
       </p>
       <div class="d-flex gap-2 mb-3">
-        <button class="btn btn-success">Sí</button>
+        <button class="btn btn-success" (click)="abrirModal()">Sí</button>
         <button class="btn btn-danger">No</button>
-        <button class="btn btn-secondary">Desglosar</button>
+        <button (click)="abrirItem()" class="btn btn-secondary">
+          Desglosar
+        </button>
       </div>
     </div>
   </div>
 
   <!-- Finalizar Encuesta -->
   <div class="d-flex justify-content-center">
-    <button (click)="finalizarFormulario()" class="btn btn-success">
+    <button (click)="finalizarFormulario()" class="mb-3 btn btn-success">
       Continuar
     </button>
   </div>
 </div>
+
+<!-- Modal -->
+@if(modalVisible){
+<div class="modal-custom">
+  <div class="modal-content-custom">
+    <p class="color mb-3 fw-semibold">
+      Ingrese el porcentaje de cumplimiento de esta actividad:
+    </p>
+    <input
+      type="number"
+      class="form-select mb-3"
+      min="0"
+      max="100"
+      placeholder="Ej. 80"
+      [(ngModel)]="porcentajeCumplimiento"
+    />
+    <div class="text-end">
+      <button class="btn btn-primary" (click)="aceptar()">Aceptar</button>
+      <button class="btn btn-secondary ms-2" (click)="cerrarModal()">
+        Cancelar
+      </button>
+    </div>
+  </div>
+</div>
+}
