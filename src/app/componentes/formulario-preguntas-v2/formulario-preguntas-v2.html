@@ -3,7 +3,7 @@
     Dirección General de Tecnologías de la Información (DGTI)
   </label>
 </div>
-<h1 class="ug-title">Primera Encuesta</h1>
+<h1 class="ug-title">Encuesta General</h1>
 <div class="d-flex gap-2 align-items-center p-2">
   <label class="fw-bold">Fecha: </label>
   <input
@@ -13,15 +13,13 @@
     disabled
   />
 </div>
-<!-- Nueva sección añadida -->
 
 <div class="container-fluid mt-4 ug-container shadow-lg p-4">
-  <div class="ps-2 mb-4 border-start border-4 border-primary ">
+  <div class="ps-2 mb-4 border-start border-4 border-primary">
     <h5 class="fw-semibold text-primary">
       Sección A: Controles Técnicos y Operacionales (Infraestructura y Sistemas)
     </h5>
   </div>
-  <div class="d-flex justify-content-between mb-3"></div>
 
   <!-- Pregunta 1 -->
   <div class="card mb-3">
@@ -31,9 +29,28 @@
         hardening) para prevenir accesos no autorizados?
       </p>
       <div class="d-flex gap-2 mb-3">
-        <button class="btn btn-success" (click)="abrirModal()">Sí</button>
-        <button class="btn btn-danger">No</button>
-        <button class="btn btn-secondary">Desglosar</button>
+        <button
+          class="btn"
+          [ngClass]="
+            botonesSiPresionados[0] ? 'btn-success' : 'btn-outline-success'
+          "
+          (click)="toggleBotonSi(0); abrirModal()"
+        >
+          Sí
+        </button>
+        <button
+          class="btn"
+          [ngClass]="
+            botonesNoPresionados[0] ? 'btn-danger' : 'btn-outline-danger'
+          "
+          (click)="toggleBotonNo(0)"
+        >
+          No
+        </button>
+
+        <button (click)="abrirItems()" class="btn btn-secondary">
+          Desglosar
+        </button>
       </div>
     </div>
   </div>
@@ -45,9 +62,349 @@
         2. ¿Se realiza copia de seguridad periódica de la información crítica?
       </p>
       <div class="d-flex gap-2 mb-3">
-        <button class="btn btn-success" (click)="abrirModal()">Sí</button>
-        <button class="btn btn-danger">No</button>
-        <button (click)="abrirItem()" class="btn btn-secondary">
+        <button
+          class="btn"
+          [ngClass]="
+            botonesSiPresionados[1] ? 'btn-success' : 'btn-outline-success'
+          "
+          (click)="toggleBotonSi(1); abrirModal()"
+        >
+          Sí
+        </button>
+        <button
+          class="btn"
+          [ngClass]="
+            botonesNoPresionados[1] ? 'btn-danger' : 'btn-outline-danger'
+          "
+          (click)="toggleBotonNo(1)"
+        >
+          No
+        </button>
+
+        <button (click)="abrirItems()" class="btn btn-secondary">
+          Desglosar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pregunta 3 -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="fw-semibold">
+        3. ¿Se implementan controles técnicos robustos (ej., MFA, políticas de
+        contraseña, gestión de privilegios, estaciones seguras) para asegurar
+        que solo el personal autorizado de sistemas tenga acceso a los
+        servidores y herramientas de administración, y que este acceso sea
+        monitoreado?
+      </p>
+      <div class="d-flex gap-2 mb-3">
+        <button
+          class="btn"
+          [ngClass]="
+            botonesSiPresionados[2] ? 'btn-success' : 'btn-outline-success'
+          "
+          (click)="toggleBotonSi(2); abrirModal()"
+        >
+          Sí
+        </button>
+        <button
+          class="btn"
+          [ngClass]="
+            botonesNoPresionados[2] ? 'btn-danger' : 'btn-outline-danger'
+          "
+          (click)="toggleBotonNo(2)"
+        >
+          No
+        </button>
+
+        <button (click)="abrirItems()" class="btn btn-secondary">
+          Desglosar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pregunta 4 -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="fw-semibold">
+        4. ¿Existe un proceso estandarizado para la creación segura de nuevos
+        servidores virtuales y para la gestión de las cuentas de usuario en
+        todos los servidores, aplicando configuraciones de seguridad iniciales y
+        el principio de mínimo privilegio?
+      </p>
+      <div class="d-flex gap-2 mb-3">
+        <button
+          class="btn"
+          [ngClass]="
+            botonesSiPresionados[3] ? 'btn-success' : 'btn-outline-success'
+          "
+          (click)="toggleBotonSi(3); abrirModal()"
+        >
+          Sí
+        </button>
+        <button
+          class="btn"
+          [ngClass]="
+            botonesNoPresionados[3] ? 'btn-danger' : 'btn-outline-danger'
+          "
+          (click)="toggleBotonNo(3)"
+        >
+          No
+        </button>
+
+        <button (click)="abrirItems()" class="btn btn-secondary">
+          Desglosar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pregunta 5 -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="fw-semibold">
+        5. ¿Realizamos análisis de seguridad de código fuente y/o pruebas de
+        penetración en nuestras aplicaciones antes de su despliegue en
+        producción, y gestionamos las vulnerabilidades de librerías de terceros?
+      </p>
+      <div class="d-flex gap-2 mb-3">
+        <button
+          class="btn"
+          [ngClass]="
+            botonesSiPresionados[4] ? 'btn-success' : 'btn-outline-success'
+          "
+          (click)="toggleBotonSi(4); abrirModal()"
+        >
+          Sí
+        </button>
+        <button
+          class="btn"
+          [ngClass]="
+            botonesNoPresionados[4] ? 'btn-danger' : 'btn-outline-danger'
+          "
+          (click)="toggleBotonNo(4)"
+        >
+          No
+        </button>
+
+        <button (click)="abrirItems()" class="btn btn-secondary">
+          Desglosar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pregunta 6 -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="fw-semibold">
+        6. ¿Tenemos implementados procedimientos técnicos (ej., borrado seguro,
+        retención configurada en sistemas) para garantizar la supresión de datos
+        personales una vez que han dejado de ser necesarios o cuando se cumplen
+        los plazos de conservación?
+      </p>
+      <div class="d-flex gap-2 mb-3">
+        <button
+          class="btn"
+          [ngClass]="
+            botonesSiPresionados[5] ? 'btn-success' : 'btn-outline-success'
+          "
+          (click)="toggleBotonSi(5); abrirModal()"
+        >
+          Sí
+        </button>
+        <button
+          class="btn"
+          [ngClass]="
+            botonesNoPresionados[5] ? 'btn-danger' : 'btn-outline-danger'
+          "
+          (click)="toggleBotonNo(5)"
+        >
+          No
+        </button>
+
+        <button (click)="abrirItems()" class="btn btn-secondary">
+          Desglosar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pregunta 7 -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="fw-semibold">
+        7. ¿Se llevan a cabo copias de seguridad de todos los datos personales
+        de la organización de forma regular, se encuentran cifradas, y se
+        prueban para asegurar su adecuada restauración?
+      </p>
+      <div class="d-flex gap-2 mb-3">
+        <button
+          class="btn"
+          [ngClass]="
+            botonesSiPresionados[6] ? 'btn-success' : 'btn-outline-success'
+          "
+          (click)="toggleBotonSi(6); abrirModal()"
+        >
+          Sí
+        </button>
+        <button
+          class="btn"
+          [ngClass]="
+            botonesNoPresionados[6] ? 'btn-danger' : 'btn-outline-danger'
+          "
+          (click)="toggleBotonNo(6)"
+        >
+          No
+        </button>
+
+        <button (click)="abrirItems()" class="btn btn-secondary">
+          Desglosar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pregunta 8 -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="fw-semibold">
+        8. ¿Contamos con un inventario técnico de activos (hardware y software)
+        que contenga información relevante para la protección de datos, y se
+        registran adecuadamente los cambios significativos en los sistemas?
+      </p>
+      <div class="d-flex gap-2 mb-3">
+        <button
+          class="btn"
+          [ngClass]="
+            botonesSiPresionados[7] ? 'btn-success' : 'btn-outline-success'
+          "
+          (click)="toggleBotonSi(7); abrirModal()"
+        >
+          Sí
+        </button>
+        <button
+          class="btn"
+          [ngClass]="
+            botonesNoPresionados[7] ? 'btn-danger' : 'btn-outline-danger'
+          "
+          (click)="toggleBotonNo(7)"
+        >
+          No
+        </button>
+
+        <button (click)="abrirItems()" class="btn btn-secondary">
+          Desglosar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pregunta 9 -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="fw-semibold">
+        9. ¿Existe un proceso de gestión de incidentes formal y técnico que
+        permita detectar, contener, erradicar y recuperar las violaciones de
+        datos personales ('data breach') y notificar a los responsables
+        internos?
+      </p>
+      <div class="d-flex gap-2 mb-3">
+        <button
+          class="btn"
+          [ngClass]="
+            botonesSiPresionados[8] ? 'btn-success' : 'btn-outline-success'
+          "
+          (click)="toggleBotonSi(8); abrirModal()"
+        >
+          Sí
+        </button>
+        <button
+          class="btn"
+          [ngClass]="
+            botonesNoPresionados[8] ? 'btn-danger' : 'btn-outline-danger'
+          "
+          (click)="toggleBotonNo(8)"
+        >
+          No
+        </button>
+
+        <button (click)="abrirItems()" class="btn btn-secondary">
+          Desglosar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pregunta 10 -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="fw-semibold">
+        10. ¿Se aplican controles técnicos (ej., auditorías de seguridad,
+        cláusulas de seguridad, monitoreo de acceso, VPNs) y se tiene
+        visibilidad sobre las cadenas de subcontratación cuando utilizamos
+        servicios de terceros (ej., la nube, proveedores de software) que
+        procesan datos personales?
+      </p>
+      <div class="d-flex gap-2 mb-3">
+        <button
+          class="btn"
+          [ngClass]="
+            botonesSiPresionados[9] ? 'btn-success' : 'btn-outline-success'
+          "
+          (click)="toggleBotonSi(9); abrirModal()"
+        >
+          Sí
+        </button>
+        <button
+          class="btn"
+          [ngClass]="
+            botonesNoPresionados[9] ? 'btn-danger' : 'btn-outline-danger'
+          "
+          (click)="toggleBotonNo(9)"
+        >
+          No
+        </button>
+
+        <button (click)="abrirItems()" class="btn btn-secondary">
+          Desglosar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pregunta 11 -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="fw-semibold">
+        11. ¿Se asegura que el correo electrónico y otras comunicaciones que
+        transmiten datos personales estén cifradas, y se gestionan los riesgos
+        asociados al uso de dispositivos móviles (ej., pérdida, acceso
+        indebido)?
+      </p>
+      <div class="d-flex gap-2 mb-3">
+        <button
+          class="btn"
+          [ngClass]="
+            botonesSiPresionados[10] ? 'btn-success' : 'btn-outline-success'
+          "
+          (click)="toggleBotonSi(10); abrirModal()"
+        >
+          Sí
+        </button>
+        <button
+          class="btn"
+          [ngClass]="
+            botonesNoPresionados[10] ? 'btn-danger' : 'btn-outline-danger'
+          "
+          (click)="toggleBotonNo(10)"
+        >
+          No
+        </button>
+
+        <button (click)="abrirItems()" class="btn btn-secondary">
           Desglosar
         </button>
       </div>
@@ -61,7 +418,6 @@
     </button>
   </div>
 </div>
-
 <!-- Modal -->
 @if(modalVisible){
 <div class="modal-custom">
