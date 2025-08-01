@@ -76,11 +76,12 @@
             <thead>
               <tr>
                 <th>Código</th>
-                <th>Fecha</th>
+                <th>Fecha de generación</th>
                 <th>Número</th>
                 <th>Estado</th>
                 <th>Preguntas</th>
-                <th>Detalles</th>
+                <th>Analisis</th>
+                <th>Fecha de Registro</th>
               </tr>
             </thead>
             <tbody>
@@ -104,36 +105,91 @@
                   <td>
                     <button
                       class="ug-btn btn-sm"
-                      (click)="toggleDetalle(encuesta)"
+                      (click)="abrirModal(encuesta)"
                     >
-                      {{ encuesta.expandido ? "Ocultar" : "Ver" }} Detalle
+                      Ver Analisis
                     </button>
                   </td>
-                </tr>
-                <tr *ngIf="encuesta.expandido">
-                  <td colspan="6">
-                    <table class="table table-bordered mb-0">
-                      <thead>
-                        <tr>
-                          <th>Fecha</th>
-                          <th>Cantidad</th>
-                          <th>Precio</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr *ngFor="let d of encuesta.detalles">
-                          <td>{{ d.fecha }}</td>
-                          <td>{{ d.cantidad }}</td>
-                          <td>${{ d.precio }}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
+                  <td>{{ encuesta.fechaRegistro }}</td>
                 </tr>
               </ng-container>
             </tbody>
           </table>
         </div>
+      </div>
+    </div>
+
+    <!-- Modal simple -->
+    <div *ngIf="modalVisible" class="modal-overlay">
+      <div class="modal-simple">
+        <h3>Analisis de la encuesta {{ encuestaSeleccionada?.id }}</h3>
+        <h5>Seccion A: Analisis de Riesgo DCB-10</h5>
+        <table class="table table-bordered mb-3">
+          <thead>
+            <tr>
+              <th>Proceso</th>
+              <th>Estado</th>
+              <th>Descripción</th>
+              <th>Supervisor</th>
+              <th>Responsable Tratamiento</th>
+              <th>Responsable Implementación</th>
+              <th>Evidencia</th>
+              <th>Fecha Inicio</th>
+              <th>Fecha Fin</th>
+              <th>Observación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let d of encuestaSeleccionada?.detalles">
+              <td>{{ d.proceso }}</td>
+              <td>{{ d.estado }}</td>
+              <td>{{ d.descripcion }}</td>
+              <td>{{ d.supervisor }}</td>
+              <td>{{ d.responsableTratamiento }}</td>
+              <td>{{ d.responsableImplementacion }}</td>
+              <td>{{ d.evidencia }}</td>
+              <td>{{ d.fechaInicio }}</td>
+              <td>{{ d.fechaFin }}</td>
+              <td>{{ d.observacionEstado }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h5>Seccion B: Analisis de Riesgo DCB-11</h5>
+        <table class="table table-bordered mb-3">
+          <thead>
+            <tr>
+              <th>Proceso</th>
+              <th>Estado</th>
+              <th>Descripción</th>
+              <th>Supervisor</th>
+              <th>Responsable Tratamiento</th>
+              <th>Responsable Implementación</th>
+              <th>Evidencia</th>
+              <th>Fecha Inicio</th>
+              <th>Fecha Fin</th>
+              <th>Observación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let d of encuestaSeleccionada?.detalles">
+              <td>{{ d.proceso }}</td>
+              <td>{{ d.estado }}</td>
+              <td>{{ d.descripcion }}</td>
+              <td>{{ d.supervisor }}</td>
+              <td>{{ d.responsableTratamiento }}</td>
+              <td>{{ d.responsableImplementacion }}</td>
+              <td>{{ d.evidencia }}</td>
+              <td>{{ d.fechaInicio }}</td>
+              <td>{{ d.fechaFin }}</td>
+              <td>{{ d.observacionEstado }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <button class="btn btn-secondary" (click)="cerrarModal()">
+          Cerrar
+        </button>
       </div>
     </div>
   </div>
