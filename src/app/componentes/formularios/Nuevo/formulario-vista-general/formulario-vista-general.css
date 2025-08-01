@@ -1,0 +1,111 @@
+/* Contenedor principal y layout flex */
+
+/* Formulario */
+.form-container {
+  flex: 1 1 350px;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0, 76, 151, 0.2);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container h4 {
+  color: #004c97;
+  margin-bottom: 0.2rem;
+  text-align: center;
+}
+
+.form-container label {
+  font-weight: 600;
+  color: #212529;
+}
+
+.form-container input[type="text"],
+.form-container select {
+  padding: 0.55rem 0.75rem;
+  margin-bottom: 1.2rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.25s ease;
+}
+
+.form-container input[type="text"]:focus,
+.form-container select:focus {
+  border-color: #004c97;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 76, 151, 0.4);
+}
+
+/* Botones (ug-btn) */
+.ug-btn {
+  display: inline-block;
+  background-color: #004c97;
+  color: #fff;
+  border: 1px solid #004c97;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+.ug-btn:hover {
+  background-color: #ffffff;
+  color: #004c97;
+  border-color: #004c97;
+}
+
+.ug-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 76, 151, 0.4);
+}
+
+/* Tabla */
+.tabla-container {
+  flex: 2 1 700px;
+}
+
+.boton-nueva-encuesta {
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+.tabla-ug-wrapper {
+  border: 1px solid #004b9767;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.tabla-ug {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tabla-ug thead th {
+  background-color: #004c97;
+  color: white;
+  font-weight: 600;
+  border: 1px solid #ced4da;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.tabla-ug tbody td {
+  border: 1px solid #dee2e6;
+  padding: 0.6rem 0.75rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
