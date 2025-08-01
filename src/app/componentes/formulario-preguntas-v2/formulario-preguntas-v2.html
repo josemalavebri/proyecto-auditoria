@@ -22,12 +22,17 @@
   </div>
 
   <!-- Pregunta 1 -->
-  <div class="card mb-3">
+  <div class="card mb-3" [ngClass]="{ 'card-gris': tarjetaGris[0] }">
     <div class="card-body">
-      <p class="fw-semibold">
-        1. ¿Se utilizan soluciones técnicas (ej: cifrado, segregación de red,
-        hardening) para prevenir accesos no autorizados?
-      </p>
+      <div
+        class="pregunta-contenedor"
+        [ngClass]="{ opaca: preguntaOpacada[0] }"
+      >
+        <p class="fw-semibold">
+          1. ¿Se utilizan soluciones técnicas (ej: cifrado, segregación de red,
+          hardening) para prevenir accesos no autorizados?
+        </p>
+      </div>
       <div class="d-flex gap-2 mb-3">
         <button
           class="btn"
@@ -56,11 +61,16 @@
   </div>
 
   <!-- Pregunta 2 -->
-  <div class="card mb-3">
+  <div class="card mb-3" [ngClass]="{ 'card-gris': tarjetaGris[1] }">
     <div class="card-body">
-      <p class="fw-semibold">
-        2. ¿Se realiza copia de seguridad periódica de la información crítica?
-      </p>
+      <div
+        class="pregunta-contenedor"
+        [ngClass]="{ opaca: preguntaOpacada[1] }"
+      >
+        <p class="fw-semibold">
+          2. ¿Se realiza copia de seguridad periódica de la información crítica?
+        </p>
+      </div>
       <div class="d-flex gap-2 mb-3">
         <button
           class="btn"
@@ -80,7 +90,6 @@
         >
           No
         </button>
-
         <button (click)="abrirItems()" class="btn btn-secondary">
           Desglosar
         </button>
@@ -89,15 +98,20 @@
   </div>
 
   <!-- Pregunta 3 -->
-  <div class="card mb-3">
+  <div class="card mb-3" [ngClass]="{ 'card-gris': tarjetaGris[2] }">
     <div class="card-body">
-      <p class="fw-semibold">
-        3. ¿Se implementan controles técnicos robustos (ej., MFA, políticas de
-        contraseña, gestión de privilegios, estaciones seguras) para asegurar
-        que solo el personal autorizado de sistemas tenga acceso a los
-        servidores y herramientas de administración, y que este acceso sea
-        monitoreado?
-      </p>
+      <div
+        class="pregunta-contenedor"
+        [ngClass]="{ opaca: preguntaOpacada[2] }"
+      >
+        <p class="fw-semibold">
+          3. ¿Se implementan controles técnicos robustos (ej., MFA, políticas de
+          contraseña, gestión de privilegios, estaciones seguras) para asegurar
+          que solo el personal autorizado de sistemas tenga acceso a los
+          servidores y herramientas de administración, y que este acceso sea
+          monitoreado?
+        </p>
+      </div>
       <div class="d-flex gap-2 mb-3">
         <button
           class="btn"
@@ -117,7 +131,6 @@
         >
           No
         </button>
-
         <button (click)="abrirItems()" class="btn btn-secondary">
           Desglosar
         </button>
@@ -126,14 +139,19 @@
   </div>
 
   <!-- Pregunta 4 -->
-  <div class="card mb-3">
+  <div class="card mb-3" [ngClass]="{ 'card-gris': tarjetaGris[3] }">
     <div class="card-body">
-      <p class="fw-semibold">
-        4. ¿Existe un proceso estandarizado para la creación segura de nuevos
-        servidores virtuales y para la gestión de las cuentas de usuario en
-        todos los servidores, aplicando configuraciones de seguridad iniciales y
-        el principio de mínimo privilegio?
-      </p>
+      <div
+        class="pregunta-contenedor"
+        [ngClass]="{ opaca: preguntaOpacada[3] }"
+      >
+        <p class="fw-semibold">
+          4. ¿Existe un proceso estandarizado para la creación segura de nuevos
+          servidores virtuales y para la gestión de las cuentas de usuario en
+          todos los servidores, aplicando configuraciones de seguridad iniciales
+          y el principio de mínimo privilegio?
+        </p>
+      </div>
       <div class="d-flex gap-2 mb-3">
         <button
           class="btn"
@@ -153,7 +171,6 @@
         >
           No
         </button>
-
         <button (click)="abrirItems()" class="btn btn-secondary">
           Desglosar
         </button>
@@ -162,13 +179,19 @@
   </div>
 
   <!-- Pregunta 5 -->
-  <div class="card mb-3">
+  <div class="card mb-3" [ngClass]="{ 'card-gris': tarjetaGris[4] }">
     <div class="card-body">
-      <p class="fw-semibold">
-        5. ¿Realizamos análisis de seguridad de código fuente y/o pruebas de
-        penetración en nuestras aplicaciones antes de su despliegue en
-        producción, y gestionamos las vulnerabilidades de librerías de terceros?
-      </p>
+      <div
+        class="pregunta-contenedor"
+        [ngClass]="{ opaca: preguntaOpacada[4] }"
+      >
+        <p class="fw-semibold">
+          5. ¿Realizamos análisis de seguridad de código fuente y/o pruebas de
+          penetración en nuestras aplicaciones antes de su despliegue en
+          producción, y gestionamos las vulnerabilidades de librerías de
+          terceros?
+        </p>
+      </div>
       <div class="d-flex gap-2 mb-3">
         <button
           class="btn"
@@ -188,7 +211,6 @@
         >
           No
         </button>
-
         <button (click)="abrirItems()" class="btn btn-secondary">
           Desglosar
         </button>
@@ -197,14 +219,19 @@
   </div>
 
   <!-- Pregunta 6 -->
-  <div class="card mb-3">
+  <div class="card mb-3" [ngClass]="{ 'card-gris': tarjetaGris[5] }">
     <div class="card-body">
-      <p class="fw-semibold">
-        6. ¿Tenemos implementados procedimientos técnicos (ej., borrado seguro,
-        retención configurada en sistemas) para garantizar la supresión de datos
-        personales una vez que han dejado de ser necesarios o cuando se cumplen
-        los plazos de conservación?
-      </p>
+      <div
+        class="pregunta-contenedor"
+        [ngClass]="{ opaca: preguntaOpacada[5] }"
+      >
+        <p class="fw-semibold">
+          6. ¿Tenemos implementados procedimientos técnicos (ej., borrado
+          seguro, retención configurada en sistemas) para garantizar la
+          supresión de datos personales una vez que han dejado de ser necesarios
+          o cuando se cumplen los plazos de conservación?
+        </p>
+      </div>
       <div class="d-flex gap-2 mb-3">
         <button
           class="btn"
@@ -224,7 +251,6 @@
         >
           No
         </button>
-
         <button (click)="abrirItems()" class="btn btn-secondary">
           Desglosar
         </button>
@@ -233,13 +259,18 @@
   </div>
 
   <!-- Pregunta 7 -->
-  <div class="card mb-3">
+  <div class="card mb-3" [ngClass]="{ 'card-gris': tarjetaGris[6] }">
     <div class="card-body">
-      <p class="fw-semibold">
-        7. ¿Se llevan a cabo copias de seguridad de todos los datos personales
-        de la organización de forma regular, se encuentran cifradas, y se
-        prueban para asegurar su adecuada restauración?
-      </p>
+      <div
+        class="pregunta-contenedor"
+        [ngClass]="{ opaca: preguntaOpacada[6] }"
+      >
+        <p class="fw-semibold">
+          7. ¿Se llevan a cabo copias de seguridad de todos los datos personales
+          de la organización de forma regular, se encuentran cifradas, y se
+          prueban para asegurar su adecuada restauración?
+        </p>
+      </div>
       <div class="d-flex gap-2 mb-3">
         <button
           class="btn"
@@ -259,7 +290,6 @@
         >
           No
         </button>
-
         <button (click)="abrirItems()" class="btn btn-secondary">
           Desglosar
         </button>
@@ -268,13 +298,19 @@
   </div>
 
   <!-- Pregunta 8 -->
-  <div class="card mb-3">
+  <div class="card mb-3" [ngClass]="{ 'card-gris': tarjetaGris[7] }">
     <div class="card-body">
-      <p class="fw-semibold">
-        8. ¿Contamos con un inventario técnico de activos (hardware y software)
-        que contenga información relevante para la protección de datos, y se
-        registran adecuadamente los cambios significativos en los sistemas?
-      </p>
+      <div
+        class="pregunta-contenedor"
+        [ngClass]="{ opaca: preguntaOpacada[7] }"
+      >
+        <p class="fw-semibold">
+          8. ¿Contamos con un inventario técnico de activos (hardware y
+          software) que contenga información relevante para la protección de
+          datos, y se registran adecuadamente los cambios significativos en los
+          sistemas?
+        </p>
+      </div>
       <div class="d-flex gap-2 mb-3">
         <button
           class="btn"
@@ -294,7 +330,6 @@
         >
           No
         </button>
-
         <button (click)="abrirItems()" class="btn btn-secondary">
           Desglosar
         </button>
@@ -303,14 +338,19 @@
   </div>
 
   <!-- Pregunta 9 -->
-  <div class="card mb-3">
+  <div class="card mb-3" [ngClass]="{ 'card-gris': tarjetaGris[8] }">
     <div class="card-body">
-      <p class="fw-semibold">
-        9. ¿Existe un proceso de gestión de incidentes formal y técnico que
-        permita detectar, contener, erradicar y recuperar las violaciones de
-        datos personales ('data breach') y notificar a los responsables
-        internos?
-      </p>
+      <div
+        class="pregunta-contenedor"
+        [ngClass]="{ opaca: preguntaOpacada[8] }"
+      >
+        <p class="fw-semibold">
+          9. ¿Existe un proceso de gestión de incidentes formal y técnico que
+          permita detectar, contener, erradicar y recuperar las violaciones de
+          datos personales ('data breach') y notificar a los responsables
+          internos?
+        </p>
+      </div>
       <div class="d-flex gap-2 mb-3">
         <button
           class="btn"
@@ -330,7 +370,6 @@
         >
           No
         </button>
-
         <button (click)="abrirItems()" class="btn btn-secondary">
           Desglosar
         </button>
@@ -339,15 +378,20 @@
   </div>
 
   <!-- Pregunta 10 -->
-  <div class="card mb-3">
+  <div class="card mb-3" [ngClass]="{ 'card-gris': tarjetaGris[9] }">
     <div class="card-body">
-      <p class="fw-semibold">
-        10. ¿Se aplican controles técnicos (ej., auditorías de seguridad,
-        cláusulas de seguridad, monitoreo de acceso, VPNs) y se tiene
-        visibilidad sobre las cadenas de subcontratación cuando utilizamos
-        servicios de terceros (ej., la nube, proveedores de software) que
-        procesan datos personales?
-      </p>
+      <div
+        class="pregunta-contenedor"
+        [ngClass]="{ opaca: preguntaOpacada[9] }"
+      >
+        <p class="fw-semibold">
+          10. ¿Se aplican controles técnicos (ej., auditorías de seguridad,
+          cláusulas de seguridad, monitoreo de acceso, VPNs) y se tiene
+          visibilidad sobre las cadenas de subcontratación cuando utilizamos
+          servicios de terceros (ej., la nube, proveedores de software) que
+          procesan datos personales?
+        </p>
+      </div>
       <div class="d-flex gap-2 mb-3">
         <button
           class="btn"
@@ -367,7 +411,6 @@
         >
           No
         </button>
-
         <button (click)="abrirItems()" class="btn btn-secondary">
           Desglosar
         </button>
@@ -376,14 +419,19 @@
   </div>
 
   <!-- Pregunta 11 -->
-  <div class="card mb-3">
+  <div class="card mb-3" [ngClass]="{ 'card-gris': tarjetaGris[10] }">
     <div class="card-body">
-      <p class="fw-semibold">
-        11. ¿Se asegura que el correo electrónico y otras comunicaciones que
-        transmiten datos personales estén cifradas, y se gestionan los riesgos
-        asociados al uso de dispositivos móviles (ej., pérdida, acceso
-        indebido)?
-      </p>
+      <div
+        class="pregunta-contenedor"
+        [ngClass]="{ opaca: preguntaOpacada[10] }"
+      >
+        <p class="fw-semibold">
+          11. ¿Se asegura que el correo electrónico y otras comunicaciones que
+          transmiten datos personales estén cifradas, y se gestionan los riesgos
+          asociados al uso de dispositivos móviles (ej., pérdida, acceso
+          indebido)?
+        </p>
+      </div>
       <div class="d-flex gap-2 mb-3">
         <button
           class="btn"
@@ -403,7 +451,6 @@
         >
           No
         </button>
-
         <button (click)="abrirItems()" class="btn btn-secondary">
           Desglosar
         </button>

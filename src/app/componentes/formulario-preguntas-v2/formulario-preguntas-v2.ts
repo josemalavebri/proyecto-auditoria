@@ -20,6 +20,13 @@ export class FormularioPreguntasV2 {
   totalPreguntas: number = 5;
   deshabilitado: boolean = false;
   deshabilitado2: boolean = false;
+
+  // Array para controlar si la pregunta se opaca
+  preguntaOpacada = Array(10).fill(false); // Asegúrate de que el tamaño sea acorde a tu cantidad de preguntas
+
+  // Array para controlar si la tarjeta se pone gris
+  tarjetaGris = Array(10).fill(false); // Asegúrate de que el tamaño sea acorde a tu cantidad de preguntas
+
   deshabilitarCard() {
     this.deshabilitado = true;
   }
@@ -27,6 +34,7 @@ export class FormularioPreguntasV2 {
   deshabilitarCard2() {
     this.deshabilitado2 = true;
   }
+
   constructor(private router: Router) {}
 
   cambiarPestana() {
@@ -60,9 +68,9 @@ export class FormularioPreguntasV2 {
       return;
     }
     console.log('Porcentaje ingresado:', this.porcentajeCumplimiento);
-    // Aquí manejas el valor (guardar, enviar, etc)
     this.cerrarModal();
   }
+
   abrirItems() {
     this.router.navigate(['preguntas']);
   }
@@ -74,10 +82,14 @@ export class FormularioPreguntasV2 {
   toggleBotonSi(index: number) {
     this.botonesSiPresionados[index] = true;
     this.botonesNoPresionados[index] = false;
+    this.tarjetaGris[index] = false; // No cambia el color de la tarjeta al presionar "Sí"
+    this.preguntaOpacada[index] = false; // No opaca la pregunta al presionar "Sí"
   }
 
   toggleBotonNo(index: number) {
     this.botonesNoPresionados[index] = true;
     this.botonesSiPresionados[index] = false;
+    this.tarjetaGris[index] = true; // Cambia el color de la tarjeta a gris cuando se presiona "No"
+    this.preguntaOpacada[index] = true; // Aplica la opacidad a la pregunta cuando se presiona "No"
   }
 }

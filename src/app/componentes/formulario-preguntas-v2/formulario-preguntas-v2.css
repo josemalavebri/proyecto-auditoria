@@ -106,3 +106,21 @@ label {
 .color {
   color: white;
 }
+
+.pregunta-contenedor {
+  transition: opacity 0.3s ease;
+  position: relative; /* Asegúrate de que la posición de este contenedor sea relativa */
+}
+
+.pregunta-contenedor.opaco {
+  opacity: 0.5; /* Opacidad solo de la pregunta */
+  pointer-events: none; /* Opcional: Evita interacciones mientras esté opaca */
+}
+
+.card-gris {
+  background-color: #f0f0f0; /* Gris claro */
+}
+
+.opaca {
+  opacity: 0.5; /* Ajusta el nivel de opacidad según sea necesario */
+}
