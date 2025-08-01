@@ -1,0 +1,310 @@
+<div class="container py-2">
+  <!-- Botón de fecha de hoy -->
+  <div class="text-center mb-1">
+    <button class="btn btn-outline-primary px-4 py-2 fs-5">
+      {{ fechaHoy }}
+    </button>
+  </div>
+
+  <!-- Encuesta -->
+  <div class="card shadow rounded-4 p-4 bg-white">
+    <h3 class="mb-4 ug-title mb-4 fw-semibold">Encuesta General</h3>
+
+    <!-- Switches globales -->
+    <div class="mb-4">
+      <h5 class="fw-bold text-center form-label ug-label">Opciones Generales</h5>
+      <div class="d-flex flex-column flex-sm-row gap-4 justify-content-center">
+        <div class="form-check form-switch form-check-reverse">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="aplicaTodoSwitch"
+            [(ngModel)]="aplicaTodo"
+            (change)="onToggleAplicaTodo()"
+          />
+          <label class="form-check-label mb-0" for="aplicaTodoSwitch"
+            >Aplica Todo</label
+          >
+        </div>
+
+        <div class="form-check form-switch form-check-reverse">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="noAplicaTodoSwitch"
+            [(ngModel)]="noAplicaTodo"
+            (change)="onCambiarNoAplicaTodo()"
+          />
+          <label class="form-check-label mb-0" for="noAplicaTodoSwitch"
+            >No Aplica Todo</label
+          >
+        </div>
+
+        <div class="form-check form-switch form-check-reverse">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="aceptarTodoSwitch"
+            [(ngModel)]="aceptarTodo"
+            (change)="onCambiarAceptarTodo()"
+          />
+          <label class="form-check-label mb-0" for="aceptarTodoSwitch"
+            >Aceptar Todo</label
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- PREGUNTA 1 -->
+    <div
+      class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-4 mb-4"
+    >
+      <p class="fw-semibold flex-grow-1 fs-5 mb-0">
+        1. ¿Se utilizan soluciones técnicas (ej., cifrado, segregación de red,
+        hardening) para prevenir el acceso, la alteración, la comunicación o la
+        destrucción no autorizada de los datos personales en nuestros servidores
+        y aplicaciones, así como para asegurar su disponibilidad?
+      </p>
+      <div
+        class="d-flex flex-column flex-sm-row align-items-center gap-4"
+        style="min-width: 280px"
+      >
+        <div class="form-check form-switch form-check-reverse m-0">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="aplica1"
+            [(ngModel)]="aplica1"
+          />
+          <label class="form-check-label mb-0" for="aplica1">Aplica</label>
+        </div>
+        <div class="d-flex flex-column" style="width: 180px">
+          <input
+            type="range"
+            class="form-range p-0"
+            min="0"
+            max="2"
+            step="1"
+            [(ngModel)]="opcionSeleccionada1"
+            [disabled]="!aplica1"
+            (change)="onCambioSliderIndividual()"
+          />
+          <div
+            class="d-flex justify-content-between mt-1 px-1 user-select-none"
+            style="font-size: 0.85rem"
+          >
+            <span
+              [class.text-primary]="opcionSeleccionada1 === 0"
+              [class.text-muted]="opcionSeleccionada1 !== 0"
+              >No Aplica</span
+            >
+            <span
+              [class.text-primary]="opcionSeleccionada1 === 1"
+              [class.text-muted]="opcionSeleccionada1 !== 1"
+              >Mitigar</span
+            >
+            <span
+              [class.text-primary]="opcionSeleccionada1 === 2"
+              [class.text-muted]="opcionSeleccionada1 !== 2"
+              >Aceptar</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-4 border-top border-2 border-secondary-subtle" />
+
+    <!-- PREGUNTA 2 -->
+    <div
+      class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-4 mb-4"
+    >
+      <p class="fw-semibold flex-grow-1 fs-5 mb-0">
+        2. ¿Se implementan controles técnicos robustos (ej., MFA, políticas de
+        contraseña, gestión de privilegios, estaciones seguras) para asegurar
+        que solo el personal autorizado de sistemas tenga acceso a los
+        servidores y herramientas de administración, y que este acceso sea
+        monitoreado?
+      </p>
+      <div
+        class="d-flex flex-column flex-sm-row align-items-center gap-4"
+        style="min-width: 280px"
+      >
+        <div class="form-check form-switch form-check-reverse m-0">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="aplica2"
+            [(ngModel)]="aplica2"
+          />
+          <label class="form-check-label mb-0" for="aplica2">Aplica</label>
+        </div>
+        <div class="d-flex flex-column" style="width: 180px">
+          <input
+            type="range"
+            class="form-range p-0"
+            min="0"
+            max="2"
+            step="1"
+            [(ngModel)]="opcionSeleccionada2"
+            [disabled]="!aplica2"
+            (change)="onCambioSliderIndividual()"
+          />
+          <div
+            class="d-flex justify-content-between mt-1 px-1 user-select-none"
+            style="font-size: 0.85rem"
+          >
+            <span
+              [class.text-primary]="opcionSeleccionada2 === 0"
+              [class.text-muted]="opcionSeleccionada2 !== 0"
+              >No Aplica</span
+            >
+            <span
+              [class.text-primary]="opcionSeleccionada2 === 1"
+              [class.text-muted]="opcionSeleccionada2 !== 1"
+              >Mitigar</span
+            >
+            <span
+              [class.text-primary]="opcionSeleccionada2 === 2"
+              [class.text-muted]="opcionSeleccionada2 !== 2"
+              >Aceptar</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-4 border-top border-2 border-secondary-subtle" />
+
+    <!-- PREGUNTA 3 -->
+    <div
+      class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-4 mb-4"
+    >
+      <p class="fw-semibold flex-grow-1 fs-5 mb-0">
+        3. ¿Existe un proceso estandarizado para la creación segura de nuevos
+        servidores virtuales y para la gestión de las cuentas de usuario en
+        todos los servidores, aplicando configuraciones de seguridad iniciales y
+        el principio de mínimo privilegio?
+      </p>
+      <div
+        class="d-flex flex-column flex-sm-row align-items-center gap-4"
+        style="min-width: 280px"
+      >
+        <div class="form-check form-switch form-check-reverse m-0">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="aplica3"
+            [(ngModel)]="aplica3"
+          />
+          <label class="form-check-label mb-0" for="aplica3">Aplica</label>
+        </div>
+        <div class="d-flex flex-column" style="width: 180px">
+          <input
+            type="range"
+            class="form-range p-0"
+            min="0"
+            max="2"
+            step="1"
+            [(ngModel)]="opcionSeleccionada3"
+            [disabled]="!aplica3"
+            (change)="onCambioSliderIndividual()"
+          />
+          <div
+            class="d-flex justify-content-between mt-1 px-1 user-select-none"
+            style="font-size: 0.85rem"
+          >
+            <span
+              [class.text-primary]="opcionSeleccionada3 === 0"
+              [class.text-muted]="opcionSeleccionada3 !== 0"
+              >No Aplica</span
+            >
+            <span
+              [class.text-primary]="opcionSeleccionada3 === 1"
+              [class.text-muted]="opcionSeleccionada3 !== 1"
+              >Mitigar</span
+            >
+            <span
+              [class.text-primary]="opcionSeleccionada3 === 2"
+              [class.text-muted]="opcionSeleccionada3 !== 2"
+              >Aceptar</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-4 border-top border-2 border-secondary-subtle" />
+
+    <!-- PREGUNTA 4 -->
+    <div
+      class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-4 mb-4"
+    >
+      <p class="fw-semibold flex-grow-1 fs-5 mb-0">
+        4. ¿Realizamos análisis de seguridad de código fuente y/o pruebas de
+        penetración en nuestras aplicaciones antes de su despliegue en
+        producción, y gestionamos las vulnerabilidades de librerías de terceros?
+      </p>
+      <div
+        class="d-flex flex-column flex-sm-row align-items-center gap-4"
+        style="min-width: 280px"
+      >
+        <div class="form-check form-switch form-check-reverse m-0">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="aplica4"
+            [(ngModel)]="aplica4"
+          />
+          <label class="form-check-label mb-0" for="aplica4">Aplica</label>
+        </div>
+        <div class="d-flex flex-column" style="width: 180px">
+          <input
+            type="range"
+            class="form-range p-0"
+            min="0"
+            max="2"
+            step="1"
+            [(ngModel)]="opcionSeleccionada4"
+            [disabled]="!aplica4"
+            (change)="onCambioSliderIndividual()"
+          />
+          <div
+            class="d-flex justify-content-between mt-1 px-1 user-select-none"
+            style="font-size: 0.85rem"
+          >
+            <span
+              [class.text-primary]="opcionSeleccionada4 === 0"
+              [class.text-muted]="opcionSeleccionada4 !== 0"
+              >No Aplica</span
+            >
+            <span
+              [class.text-primary]="opcionSeleccionada4 === 1"
+              [class.text-muted]="opcionSeleccionada4 !== 1"
+              >Mitigar</span
+            >
+            <span
+              [class.text-primary]="opcionSeleccionada4 === 2"
+              [class.text-muted]="opcionSeleccionada4 !== 2"
+              >Aceptar</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botones de exportar -->
+    <div class="text-center mt-5">
+      <button
+        class="btn btn-outline-secondary me-3 px-4 py-2 fs-5 d-inline-flex align-items-center gap-2"
+      >
+        <i class="bi bi-file-earmark-pdf"></i> PDF
+      </button>
+      <button
+        class="btn btn-outline-success px-4 py-2 fs-5 d-inline-flex align-items-center gap-2"
+      >
+        <i class="bi bi-file-earmark-excel"></i> EXCEL
+      </button>
+    </div>
+  </div>
+</div>

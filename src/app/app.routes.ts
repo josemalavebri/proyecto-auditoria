@@ -7,12 +7,14 @@ import { FacultadRegistroComponent } from './componentes/facultad/facultad-regis
 import { FacultadRegistroDepartamentosComponent } from './componentes/facultad/facultad-registro-departamentos/facultad-registro-departamentos.component';
 import { PreguntasFormularioComponent } from './componentes/formularios/preguntas-formulario/preguntas-formulario.component';
 import { RiesgoGeneral } from './componentes/riesgo-graficas/riesgo-general/riesgo-general';
-import { FormularioPreguntasV2 } from './componentes/formulario-preguntas-v2/formulario-preguntas-v2';
 import { FomularioSiguienteEncuesta } from './componentes/formularios/fomulario-siguiente-encuesta/fomulario-siguiente-encuesta';
+import { FormularioPreguntasV3 } from './componentes/formulario-preguntas-v3/formulario-preguntas-v3';
+import { EvaluacionOpcion } from './componentes/evaluacion-opcion/evaluacion-opcion';
 
 export const routes: Routes = [
   { path: 'preguntas', component: PreguntasFormularioComponent },
-  { path: 'preguntas-v2', component: FormularioPreguntasV2 },
+  { path: 'evaluacion-opcion', component: EvaluacionOpcion },
+  { path: 'preguntas-v3', component: FormularioPreguntasV3 },
   { path: 'resumen', component: FormularioResumenComponent },
   { path: 'formulario', component: FormularioVistaComponent },
   { path: 'reportes', component: FormularioResumenComponent },

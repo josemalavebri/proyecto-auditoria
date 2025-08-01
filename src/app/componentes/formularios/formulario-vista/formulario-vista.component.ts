@@ -5,16 +5,12 @@ import { Router } from '@angular/router';
   selector: 'app-formulario-vista',
   imports: [],
   templateUrl: './formulario-vista.component.html',
-  styleUrl: './formulario-vista.component.css'
+  styleUrl: './formulario-vista.component.css',
 })
 export class FormularioVistaComponent {
-
-  constructor(private router: Router) {
-
-  }
+  constructor(private router: Router) {}
   continuarPreguntas() {
-    this.router.navigate(['/preguntas-v2'])
+    //this.router.navigate(['/evaluacion-opcion']);
+    this.router.navigate(['/preguntas-v3']);
   }
-
-
 }
